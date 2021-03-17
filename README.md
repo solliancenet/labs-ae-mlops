@@ -118,39 +118,43 @@ In the following steps you will create and run a new build pipeline based on the
    
     ![Connect to repository](./media/014-createpipeline.png)
 
-3. To authorize Azure Pipelines on your GitHub repository, select `Authorize AzurePipelines`.
+3. In case Azure Pipelines were not yet authorized to your account, you need to do that. To authorize Azure Pipelines on your GitHub repository, select `Authorize AzurePipelines`. If Azure Pipelines are already authorized, you will not see this screen.
 
     ![Authorize AzurePipelines on GitHub](./media/015-authorize-github.png)
 
-4. Select the Git repository you created in the previous task: `mlops_0N` (where N is the same number as the one you have in your user name provided as part of the lab credentials).
+4. In case Azure Pipelines were not yet approved and installed for your repository, you need to do that. To approve, install, and request Azure Pipelines for your repository, select `Only select repositories`, ensure only your repository is selected (should be, by default), and then select `Approve, Install, & Request`.If Azure Pipelines are already approved and installed for your repository, you wil not see this screen.
+
+    ![Approve, Install, & Request Azure Pipelines](./media/015-approve-azure-pipelines.png)
+
+5. Select the Git repository you created in the previous task: `mlops_0N` (where N is the same number as the one you have in your user name provided as part of the lab credentials).
    
     ![Select repository name](./media/015-createpipeline.png)
 
-5. In the **Configure pipeline** step, select the **Existing Azure Pipelines YAML file**.
+6. In the **Configure pipeline** step, select the **Existing Azure Pipelines YAML file**.
    
     ![Select repository name](./media/016-createpipeline.png)
 
-6. Leave the default branch selected and paste the path to the YAML file: `/.pipelines/diabetes_regression-ci.yml`. Select **Continue**.
+7. Leave the default branch selected and paste the path to the YAML file: `/.pipelines/diabetes_regression-ci.yml`. Select **Continue**.
 
     ![Select YAML file path](./media/017-createpipeline.png)
 
-7. In the **Review** step, take a moment to observe the code inside the YAML file and then expand the **Run** menu and select **Save**.
+8. In the **Review** step, take a moment to observe the code inside the YAML file and then expand the **Run** menu and select **Save**.
    
     ![Save the build pipeline](./media/018-runpipeline.png)
 
-8. With the created pipeline, select **Rename/move** from the right menu as illustrated bellow:
+9. With the created pipeline, select **Rename/move** from the right menu as illustrated bellow:
 
     ![Rename the build pipeline](./media/019-renamepipeline.png)
 
-9. Change the pipeline name to: `Model-Train-Register-CI` and select **Save**.
+10. Change the pipeline name to: `Model-Train-Register-CI` and select **Save**.
 
     ![Rename the build pipeline](./media/020-renamepipeline.png)
 
-10. Run the pipeline by selecting the **Run pipeline** button. Leave the default values on the next dialog and hit **Run**.
+11. Run the pipeline by selecting the **Run pipeline** button. Leave the default values on the next dialog and hit **Run**.
 
     ![Run the pipeline](./media/021-runpipeline.png)
 
-11. Wait for the pipeline run to complete (it can take up to 20-25 minutes for the pipeline to finish).
+12. Wait for the pipeline run to complete (it can take up to 20-25 minutes for the pipeline to finish).
 
     >**IMPORTANT**:
     >
@@ -158,27 +162,27 @@ In the following steps you will create and run a new build pipeline based on the
 
     ![Wait for pipeline to finish](./media/021-runpipeline-wait.png)
 
-12. Once the pipeline is finished, check the execution result. Expand the **Train and evaluate model stage** from the **Expand stage** button. 
+13. Once the pipeline is finished, check the execution result. Expand the **Train and evaluate model stage** from the **Expand stage** button. 
     
     ![Expand pipeline stages](./media/022-expandstage.png)
 
-13. Also you should inspect the artifact of the training stage:
+14. Also you should inspect the artifact of the training stage:
 
     ![Inspect artifacts of the training stage](./media/023-pipelineartifacts.png)
 
-14. Next, open a new browser tab and sign in to the [Azure Portal](https://portal.azure.com) with the Azure credentials provided in the lab. Open the available Resource Group, locate and select the Machine Learning workspace that was pre-created in the lab environment.
+15. Next, open a new browser tab and sign in to the [Azure Portal](https://portal.azure.com) with the Azure credentials provided in the lab. Open the available Resource Group, locate and select the Machine Learning workspace that was pre-created in the lab environment.
 
     ![Inspect artifacts of the training stage](./media/04-getRGLocation.png)
 
-15. Select **Launch studio** to navigate to the **Azure Machine Learning Studio**.
+16. Select **Launch studio** to navigate to the **Azure Machine Learning Studio**.
     
-16. In the [Azure Machine Learning Studio](https://ml.azure.com), select **Pipelines** from the left navigation menu, go to **Pipeline endpoints** and check the published training pipeline in the `ai-in-a-day-XXXXXX` workspace.
+17. In the [Azure Machine Learning Studio](https://ml.azure.com), select **Pipelines** from the left navigation menu, go to **Pipeline endpoints** and check the published training pipeline in the `ai-in-a-day-XXXXXX` workspace.
 
     ![Inspect published ML pipeline](./media/025-checktrainingpipeline.png)
 
     Great, you now have the build pipeline for training set up which automatically triggers every time there's a change in the master branch! After the pipeline is finished, you'll see a new model in the ML Workspace.
 
-17. Navigate to the **Models** section in ML Studio, using the left navigation menu and check the newly registered model named `diabetes_regression_model.pkl`.
+18. Navigate to the **Models** section in ML Studio, using the left navigation menu and check the newly registered model named `diabetes_regression_model.pkl`.
 
     ![Inspect published ML pipeline](./media/026-registeredmodel.png)
 
