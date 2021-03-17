@@ -257,4 +257,10 @@ The release deployment and batch scoring pipelines have the following behaviors:
 
 2. Select **Launch studio** to navigate to the **Azure Machine Learning Studio**.
 
-3. Explore the Azure Machine Learning workspace to identify the results of the pipeline.
+3. Explore the Azure Machine Learning workspace to identify the results of the pipeline. Select `Endpoints` from the left menu, then select `Real-time enpoints`, and then select the `mlops-aci` deployment.
+
+    ![Inspect ACI deployment](./media/032-inspect-aci-deployment.png)
+
+4. Inspect the various properties of the deployed ACI endpoint.
+
+    ![Inspect ACI deployment properties](./media/033-aci-deployment-properties.png)
