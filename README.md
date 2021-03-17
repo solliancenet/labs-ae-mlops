@@ -126,6 +126,14 @@ In the following steps you will create and run a new build pipeline based on the
 
     ![Approve, Install, & Request Azure Pipelines](./media/015-approve-azure-pipelines.png)
 
+    You will be redirected back to Azure DevOps. If needed, sign in with the Azure DevOps user that was provided you as part of the lab credentials. Make sure `solliancelabs` (organization) and your project are selected, and then select `Continue`.
+
+    ![Approve, Install, & Request Azure Pipelines](./media/015-approve-azure-pipelines-2.png)
+
+    Finally, confirm the authorization by selecting `Authorize Azure Pipelines`.
+
+    ![](./media/015-approve-azure-pipelines-3.png)
+
 5. Select the Git repository you created in the previous task: `mlops_0N` (where N is the same number as the one you have in your user name provided as part of the lab credentials).
    
     ![Select repository name](./media/015-createpipeline.png)
