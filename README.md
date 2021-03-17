@@ -4,22 +4,16 @@ This lab covers MLOps using Azure DevOps and GitHub, training and deployment of 
 
 ## Task 1 - Explore lab scenario
 
-Managing a virtually non-stop flux of incoming research documents should be based on a fully automated and traceable process. Everything from data to code must be tracked and monitored. The complex processes of Machine Learning model training and operationalization require secure, end-to-end approaches that allow teams of developers and analysts to iterate through multiple versions of the solution.
-
-Using GitHub and GitHub Actions, we will build an end-to-end Machine Learning process, where data and code act like inputs and actionable REST API endpoints are the result. Our pipelines will automate building and operationalizing the Machine Learning model that classifies research papers.
-
 The high-level steps covered in the lab are:
 
-- Explore dashboard of COVID-19 data
-- Explore lab scenario
-- Overview of CI/CD pipeline
-- Perform real time scoring on a REST API endpoint published by the CD component of the pipeline
-- Trigger CI/CD pipeline by committing a simple code change
-- Monitor execution of CI/CD pipeline all the way to the update on the REST API endpoint
-- Perform another real time scoring on the REST API endpoint
-- Explore aspects related to traceability and control of the process
+- Configure the Azure DevOps project and required variable group
+- Create an Azure DevOps Service Connection for the Azure ML Workspace
+- Import the starter GitHub repository
+- Set up Build, Release Trigger, and Release Multi-Stage Pipelines
+- Set up the Release Deployment pipeline
+- Explore results in the Azure Machine Learning workspace
 
-## Task 2 - Configure the Azure DevOps project and required Variable group
+## Task 2 - Configure the Azure DevOps project and required variable group
 
 1. Open the [Azure DevOps portal](https://dev.azure.com/) and select the **Sign in to Azure DevOps** link. If the `We need a few more details` screen appears, leave the default values and select `Continue`.
    
@@ -94,7 +88,7 @@ Create a new service connection to your Azure ML Workspace to enable executing t
     >
     >Creating a service connection with Azure Machine Learning workspace scope requires 'Owner' or 'User Access Administrator' permissions on the Workspace. You'll need sufficient permissions to register an application with your Azure AD tenant, or you can get the ID and secret of a service principal from your Azure AD Administrator. That principal must have Contributor permissions on the Azure ML Workspace.
 
-## Task 4 - Import the GitHub repository
+## Task 4 - Import the starter GitHub repository
 
 1. Go to the [Solliance Labs GitHub portal](https://github.com/solliancelabs) and sign in with the Git credentials provided for you.
 
